@@ -4,8 +4,8 @@ import { alpha, useTheme } from '@mui/material/styles';
 
 import { useResponsive } from 'src/hooks/use-responsive';
 
-import Carousel, { CarouselDots, useCarousel } from 'src/components/carousel';
 import Image from 'src/components/image';
+import Carousel, { useCarousel, CarouselDots } from 'src/components/carousel';
 
 // ----------------------------------------------------------------------
 

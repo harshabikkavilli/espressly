@@ -1,7 +1,8 @@
 'use client';
 
+import React, { useState, useContext, createContext } from 'react';
+
 import { AlertProps } from '@mui/material/Alert';
-import React, { createContext, useContext, useState } from 'react';
 
 type ToastsContextType = {
   toastRef: React.RefObject<AlertProps> | null;
@@ -17,8 +18,10 @@ type Props = {
 export const ToastsProvider = ({ children }: Props) => {
   const [toastRef, setToastRef] = useState<React.RefObject<AlertProps> | null>(null);
 
+	const value = React.useMemo(() => ({ toastRef, setToastRef }), [toastRef]);
+
   return (
-    <ToastsContext.Provider value={{ toastRef, setToastRef }}>{children}</ToastsContext.Provider>
+    <ToastsContext.Provider value={value}>{children}</ToastsContext.Provider>
   );
 };
 

@@ -1,17 +1,20 @@
+import { useEffect } from 'react';
+import { usePathname } from 'routes/hooks/use-pathname';
+
+import List from '@mui/material/List';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import { useEffect } from 'react';
 
+import { useBoolean } from 'src/hooks/use-boolean';
+
+import { NAV } from 'src/layouts/config-layout';
+
+import Logo from 'src/components/logo';
+
+import NavList from './NavList';
+import { NavProps } from '../types';
 import Iconify from '../../../iconify';
 import Scrollbar from '../../../scrollbar';
-import { NavProps } from '../types';
-import NavList from './NavList';
-
-import { usePathname } from 'routes/hooks/use-pathname';
-import Logo from 'src/components/logo';
-import { useBoolean } from 'src/hooks/use-boolean';
-import { NAV } from 'src/layouts/config-layout';
 
 export default function NavMobile({ data }: NavProps) {
   const pathname = usePathname();

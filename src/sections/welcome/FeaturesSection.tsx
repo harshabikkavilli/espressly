@@ -1,8 +1,8 @@
+
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
+import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import React from 'react';
 
 const SUMMARY = [
   {
@@ -41,8 +41,7 @@ export default function FeaturesSection() {
         <Typography variant="h3">Fastest Way to achive your travel goals</Typography>
 
         <Typography sx={{ color: 'text.secondary' }}>
-          Discover the exceptional features that make our app stand out. From personalized
-          itineraries to exclusive travel deals, we've got you covered.
+          Discover the exceptional features that make our app stand out.
         </Typography>
       </Stack>
 

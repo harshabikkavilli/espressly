@@ -1,21 +1,22 @@
-import Button, { buttonClasses } from '@mui/material/Button';
+import Logo from 'components/logo';
+
+import Link from '@mui/material/Link';
+import Divider from '@mui/material/Divider';
 import Collapse from '@mui/material/Collapse';
 import Container from '@mui/material/Container';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Link from '@mui/material/Link';
-import Stack, { StackProps } from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Unstable_Grid2';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
 import { alpha, styled } from '@mui/material/styles';
+import Stack, { StackProps } from '@mui/material/Stack';
+import Button, { buttonClasses } from '@mui/material/Button';
 
-import Logo from 'components/logo';
-import { useBoolean } from 'src/hooks/use-boolean';
-import { useResponsive } from 'src/hooks/use-responsive';
 import { RouterLink } from 'src/routes/components';
 import { usePathname } from 'src/routes/hooks/use-pathname';
+
+import { useBoolean } from 'src/hooks/use-boolean';
+
 import Iconify from '../iconify';
-import { navConfig, pageLinks } from './config-navigation';
 import { NavSubListProps } from './nav/types';
 
 export const _socials = [
@@ -57,15 +58,7 @@ const StyledAppStoreButton = styled(Button)(({ theme }) => ({
 }));
 
 export default function Footer() {
-  const mdUp = useResponsive('up', 'md');
-
   const pathname = usePathname();
-
-  const mobileList = navConfig.find((i) => i.title === 'Pages')?.children ?? [];
-
-  const desktopList = pageLinks.sort((listA, listB) => Number(listA.order) - Number(listB.order));
-
-  const renderLists = mdUp ? desktopList : mobileList;
 
   const isHome = pathname === '/';
 

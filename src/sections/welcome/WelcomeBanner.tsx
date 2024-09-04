@@ -1,18 +1,16 @@
+import Image from 'components/image';
+import { paths } from 'routes/paths';
+import { bgGradient } from 'theme/css';
+import { useRouter } from 'routes/hooks/use-router';
+
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { alpha, useTheme } from '@mui/material/styles';
 
-import Image from 'components/image';
-
-import { useRouter } from 'routes/hooks/use-router';
-import { paths } from 'routes/paths';
-
-import { bgGradient } from 'theme/css';
-
 export default function WelcomeBanner() {
-  const {push} = useRouter();
+  const { push } = useRouter();
   const theme = useTheme();
 
   const onGetStarted = () => {

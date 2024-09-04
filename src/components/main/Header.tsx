@@ -1,35 +1,33 @@
-import AppBar from '@mui/material/AppBar';
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import IconButton from '@mui/material/IconButton';
-import Link from '@mui/material/Link';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Stack from '@mui/material/Stack';
-import Toolbar from '@mui/material/Toolbar';
-import Tooltip from '@mui/material/Tooltip';
-import { useTheme } from '@mui/material/styles';
-import { signOut } from 'aws-amplify/auth';
-import { useState } from 'react';
-
-import HeaderShadow from 'components/HeaderShadow';
-import Iconify from 'components/iconify';
-import Label from 'components/label';
 import Logo from 'components/logo';
-
+import { bgBlur } from 'theme/css';
+import Label from 'components/label';
+import React, { useState } from 'react';
+import Iconify from 'components/iconify';
+import { signOut } from 'aws-amplify/auth';
+import { useAuth } from 'providers/AuthProvider';
+import HeaderShadow from 'components/HeaderShadow';
 import { useOffSetTop } from 'hooks/use-off-set-top';
 import { useResponsive } from 'hooks/use-responsive';
 
-import { useAuth } from 'providers/AuthProvider';
-
-import { bgBlur } from 'theme/css';
+import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
+import Menu from '@mui/material/Menu';
+import Stack from '@mui/material/Stack';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import Container from '@mui/material/Container';
+import { useTheme } from '@mui/material/styles';
+import IconButton from '@mui/material/IconButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import Avatar, { AvatarOwnProps } from '@mui/material/Avatar';
 
 import { HEADER } from 'src/layouts/config-layout';
-import { navConfig } from './config-navigation';
-import NavDesktop from './nav/desktop';
+
 import NavMobile from './nav/mobile';
+import NavDesktop from './nav/desktop';
+import { navConfig } from './config-navigation';
 
 type Props = {
   headerOnDark: boolean;
@@ -55,9 +53,9 @@ function stringToColor(string: string) {
   return color;
 }
 
-function stringAvatar(name?: string) {
+function stringAvatar(name?: string): AvatarOwnProps | undefined {
   if (!name) {
-    return;
+    return undefined;
   }
 
   return {
@@ -87,9 +85,9 @@ export default function Header({ headerOnDark }: Props) {
     setAnchorEl(null);
   };
 
-  async function onSignout() {
-    await signOut();
-  }
+	const onSignout = React.useCallback(async () => {
+		await signOut();
+	}, []);
 
   const renderContent = (
     <>

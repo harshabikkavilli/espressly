@@ -1,10 +1,13 @@
 import Collapse from '@mui/material/Collapse';
 
-import NavSectionVertical from 'src/components/nav-section/vertical/nav-section-vertical';
-import { useBoolean } from 'src/hooks/use-boolean';
 import { useActiveLink } from 'src/routes/hooks';
-import { NavListProps } from '../types';
+
+import { useBoolean } from 'src/hooks/use-boolean';
+
+import NavSectionVertical from 'src/components/nav-section/vertical/nav-section-vertical';
+
 import NavItem from './NavItem';
+import { NavListProps } from '../types';
 
 export default function NavList({ data }: NavListProps) {
   const active = useActiveLink(data.path, !!data.children);

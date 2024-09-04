@@ -1,29 +1,29 @@
-import { Box, Container, Divider } from '@mui/material';
 import { useEffect } from 'react';
-import { useRouter } from 'src/routes/hooks/use-router';
-
+import { paths } from 'routes/paths';
 import { useAuth } from 'providers/AuthProvider';
 
-import { paths } from 'routes/paths';
+import { Box, Divider, Container } from '@mui/material';
 
-import FeaturesSection from './FeaturesSection';
-import ReadyToSection from './ReadyToSection';
+import { useRouter } from 'src/routes/hooks/use-router';
+
 import WelcomeBanner from './WelcomeBanner';
+import ReadyToSection from './ReadyToSection';
+import FeaturesSection from './FeaturesSection';
 
 export default function Welcome() {
   const {
     authData: { isAuthenticated, userLoading },
   } = useAuth()!;
-  const {push} = useRouter();
+  const { push } = useRouter();
 
   useEffect(() => {
     if (isAuthenticated) {
       push(paths.home);
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, push]);
 
   if (userLoading) {
-    return <></>;
+    return <>Loading</>;
   }
   return (
     <>
@@ -40,7 +40,7 @@ export default function Welcome() {
             pt: { xs: 3, md: 0 },
             position: { md: 'absolute' },
           }}
-        ></Container>
+         />
       </Box>
       <FeaturesSection />
       <ReadyToSection />

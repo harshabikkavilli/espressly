@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { styled, SxProps, Theme, useTheme } from '@mui/material/styles';
+import { Theme, styled, SxProps, useTheme } from '@mui/material/styles';
 
 import { bgBlur } from 'src/theme/css';
 

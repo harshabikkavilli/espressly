@@ -9,11 +9,11 @@ export const paths = {
   registerBackground: '/auth/register-background',
   registerIllustration: '/auth/register-illustration',
   forgotPassword: '/auth/forgot-password',
-	verify: '/auth/verify',
-	home: '/welcome',
-	// Categories
-	entertainment: '/categories/entertainment',
-	featured: '/categories/featured',
+  verify: '/auth/verify',
+  home: '/welcome',
+  // Categories
+  entertainment: '/categories/entertainment',
+  featured: '/categories/featured',
   // Common
   maintenance: '/maintenance',
   comingsoon: '/coming-soon',

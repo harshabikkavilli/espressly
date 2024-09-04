@@ -1,8 +1,8 @@
 'use client';
 
-import { fetchAuthSession, fetchUserAttributes, getCurrentUser } from 'aws-amplify/auth';
 import { Hub } from 'aws-amplify/utils';
-import React, { createContext, useContext } from 'react';
+import React, { useContext, createContext } from 'react';
+import { getCurrentUser, fetchAuthSession, fetchUserAttributes } from 'aws-amplify/auth';
 
 type AuthData = {
   isAuthenticated: boolean;
@@ -37,7 +37,9 @@ const AuthListener = async (data: any, setAuthData: (value: AuthData) => void) =
       break;
     case 'signIn_failure':
       console.log('user sign in failed');
-      break;
+			break;
+		default:
+			break;
   }
 };
 
@@ -52,9 +54,9 @@ export const AuthProvider = ({ children }: Props) => {
 
   const getCurrentUserData = async (): Promise<void> => {
     try {
-			const currentUser = await getCurrentUser();
-			const attributes = await fetchUserAttributes();
-			const signInSessionData = await fetchAuthSession();
+      const currentUser = await getCurrentUser();
+      const attributes = await fetchUserAttributes();
+      const signInSessionData = await fetchAuthSession();
       console.log('currentUser --- ', currentUser);
 
       setAuthData({
@@ -82,13 +84,10 @@ export const AuthProvider = ({ children }: Props) => {
     getCurrentUserData();
   }, []);
 
+	const value = React.useMemo(() => ({ authData, setAuthData }), [authData]);
+
   return (
-    <AuthContext.Provider
-      value={{
-        authData,
-        setAuthData,
-      }}
-    >
+    <AuthContext.Provider value={value}>
       {children}
     </AuthContext.Provider>
   );

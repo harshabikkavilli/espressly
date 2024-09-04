@@ -1,2 +1,2 @@
-export { default } from './Label';
 export * from './types';
+export { default } from './Label';

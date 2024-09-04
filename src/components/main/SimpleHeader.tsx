@@ -1,20 +1,18 @@
-import AppBar from '@mui/material/AppBar';
-import Button from '@mui/material/Button';
+import Logo from 'components/logo';
+import { bgBlur } from 'theme/css';
+import { paths } from 'routes/paths';
+import { RouterLink } from 'routes/components';
+import HeaderShadow from 'components/HeaderShadow';
+import { useOffSetTop } from 'hooks/use-off-set-top';
+
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
+import AppBar from '@mui/material/AppBar';
+import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import { useTheme } from '@mui/material/styles';
 
-import HeaderShadow from 'components/HeaderShadow';
-import Logo from 'components/logo';
-
-import { useOffSetTop } from 'hooks/use-off-set-top';
-
-import { RouterLink } from 'routes/components';
-import { paths } from 'routes/paths';
 import { HEADER } from 'src/layouts/config-layout';
-
-import { bgBlur } from 'theme/css';
 
 export default function SimpleHeader() {
   const theme = useTheme();
@@ -59,11 +57,7 @@ export default function SimpleHeader() {
             Login
           </Link>
 
-          <Button
-            variant="contained"
-						color="primary"
-						href={paths.registerBackground}
-          >
+          <Button variant="contained" color="primary" href={paths.registerBackground}>
             Register
           </Button>
         </Stack>

@@ -1,14 +1,15 @@
-import Button from '@mui/material/Button';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
-import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
-import InputAdornment from '@mui/material/InputAdornment';
 import Slide from '@mui/material/Slide';
-import { alpha, styled, SxProps, Theme } from '@mui/material/styles';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import InputAdornment from '@mui/material/InputAdornment';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
+import { Theme, alpha, styled, SxProps } from '@mui/material/styles';
 
 import { useBoolean } from 'src/hooks/use-boolean';
 
 import Iconify from 'src/components/iconify';
+
 import { HEADER } from '../config-layout';
 
 // ----------------------------------------------------------------------

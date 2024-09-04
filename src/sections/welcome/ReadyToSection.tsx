@@ -1,12 +1,12 @@
-import Button from '@mui/material/Button';
+import { paths } from 'routes/paths';
+import { useRouter } from 'routes/hooks/use-router';
+
 import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-import { useRouter } from 'routes/hooks/use-router';
-import { paths } from 'routes/paths';
-
 export default function ReadyToSection() {
-	const {push} = useRouter();
+  const { push } = useRouter();
 
   const onGetStarted = () => {
     push(paths.loginBackground);
@@ -14,14 +14,20 @@ export default function ReadyToSection() {
   return (
     <Stack
       alignItems="center"
-      sx={{ px: 4, pb: 4, maxWidth: '1200px', margin: 'auto', textAlign: 'center' }}
+      sx={{
+        px: 4,
+        pb: 4,
+        maxWidth: '1200px',
+        margin: 'auto',
+        textAlign: 'center',
+      }}
     >
       <Typography variant="h3" sx={{ pb: 2 }}>
         Plan Your Dream Getaway
       </Typography>
 
       <Typography sx={{ color: 'text.secondary', pb: 2 }}>
-        It's time to turn your travel dreams into reality. Explore destinations, create itineraries,
+       	Turn your travel dreams into reality. Explore destinations, create itineraries,
         and experience the world with our user-friendly trip planner app. Get started now and make
         memories that last a lifetime!
       </Typography>

@@ -1,9 +1,11 @@
-import Box from '@mui/material/Box';
-
 import { paths } from 'routes/paths';
 
-import { HEADER } from 'src/layouts/config-layout';
+import Box from '@mui/material/Box';
+
 import { usePathname } from 'src/routes/hooks/use-pathname';
+
+import { HEADER } from 'src/layouts/config-layout';
+
 import Footer from './Footer';
 import Header from './Header';
 import SimpleHeader from './SimpleHeader';

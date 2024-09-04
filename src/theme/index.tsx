@@ -3,18 +3,18 @@
 import { useMemo } from 'react';
 
 import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider as MuiThemeProvider, ThemeOptions } from '@mui/material/styles';
+import { createTheme, ThemeOptions, ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 
 import { useSettingsContext } from 'src/components/settings';
 
-import { customShadows } from './custom-shadows';
-import NextAppDirEmotionCacheProvider from './next-emotion-cache';
-import { createPresets } from './options/presets';
-import RTL from './options/right-to-left';
-import { componentsOverrides } from './overrides';
 import { palette } from './palette';
 import { shadows } from './shadows';
+import RTL from './options/right-to-left';
 import { typography } from './typography';
+import { customShadows } from './custom-shadows';
+import { createPresets } from './options/presets';
+import { componentsOverrides } from './overrides';
+import NextAppDirEmotionCacheProvider from './next-emotion-cache';
 
 // ----------------------------------------------------------------------
 

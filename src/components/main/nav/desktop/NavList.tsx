@@ -1,23 +1,26 @@
+import { useEffect, useCallback } from 'react';
+
 import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
 import Link from '@mui/material/Link';
-import ListSubheader from '@mui/material/ListSubheader';
 import Paper from '@mui/material/Paper';
-import Portal from '@mui/material/Portal';
 import Stack from '@mui/material/Stack';
+import Portal from '@mui/material/Portal';
 import Grid from '@mui/material/Unstable_Grid2';
-import { useCallback, useEffect } from 'react';
+import ListSubheader from '@mui/material/ListSubheader';
+
+import { RouterLink } from 'src/routes/components';
+import { usePathname, useActiveLink } from 'src/routes/hooks';
 
 import { useBoolean } from 'src/hooks/use-boolean';
-import { RouterLink } from 'src/routes/components';
-import { useActiveLink, usePathname } from 'src/routes/hooks';
+
+import NavItem from './NavItem';
 import Image from '../../../image';
 import Label from '../../../label';
 import { NavListProps, NavSubListProps } from '../types';
-import NavItem from './NavItem';
 
 export default function NavList({ data }: NavListProps) {
-	const pathname = usePathname();
+  const pathname = usePathname();
 
   const menuOpen = useBoolean();
 
